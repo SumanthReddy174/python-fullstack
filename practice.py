@@ -1,29 +1,34 @@
-def greet():
-    print("hello world")
+word="python"
+for ch in word:
+    print(ch)
 
-#2
-def greet():
-    print("hello",name)
-    print("sumanth") 
-#3  
-def add(a,b):
-    return a+b
-    result=add(10,20)
-    print("sum:",result)
-# 4
-def get():
-    return[1,2,3,4,5]
-    print("never run")
-print(get_numbers())
-#22
-def numbers():
-    yield 20
-    yield 30
-    yield 40
- gen=numbers()
-print(next(gen))
-print(next(gen))
-print(next(gen))
+
+# 1
+info={
+    "name":"sumath",
+    "age":22,
+    "is_student":True,
+    "marks":23.90
+}
+print(info.keys())
+print(len(info))
+print(info.values())
+pairs=list(info.items())
+print(pairs[0])
+
+
+#3
+for i in range(2,10,2):
+    print(i)
+
+
+
+
+
+
+
+
+
     
 
 

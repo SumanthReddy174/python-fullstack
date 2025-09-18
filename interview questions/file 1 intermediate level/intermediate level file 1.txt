@@ -1,0 +1,246 @@
+1. What are **functions** in Python? Difference between \*args and \*\*kwargs?
+functions:
+A function is a block of code that runs only when it is called.
+It helps us reuse code instead of writing it again and again.
+It may take inputs (parameters) and may return a result.
+
+Example
+def greet(name):     # function definition
+    print("Hello", name)
+greet("Sumanth")     # function call
+greet("Reddy")
+
+*args (Arguments)
+Used to pass any number of positional arguments (like a list).
+Inside the function, *args is a tuple.
+Example
+def add_numbers(*args):
+    print("Numbers:", args)
+    print("Sum:", sum(args))
+add_numbers(10, 20, 30)
+add_numbers(5, 15)
+
+**kwargs (Keyword Arguments)
+Used to pass any number of keyword arguments (like a dictionary).
+Inside the function, **kwargs is a dictionary.
+Example
+def student_info(**kwargs):
+    print("Details:", kwargs)
+student_info(name="Sumanth", age=21, course="Python")
+
+2. Explain **decorators** in Python with an example.
+A decorator is a function that adds extra features to another function without changing its original code.
+It takes a function as input,
+Adds some extra behavior,
+Returns a new function.
+Example
+def add_excitement(func):
+    def wrapper():
+        print("🎉 Before function")
+        func()
+        print("🎉 After function")
+    return wrapper
+@add_excitement
+def greet():
+    print("Hello!")
+greet()
+
+3. What are **generators** and **yield**?
+A generator is a special type of function that gives values one at a time using the yield keyword.
+It does not return all values at once (like a list).
+Instead, it remembers its state and produces the next value only when asked.
+Example
+def count_up_to(n):
+    i = 1
+    while i <= n:
+        yield i   # instead of return
+        i += 1
+# Using generator
+for num in count_up_to(5):
+    print(num)
+4. Difference between **iterable, iterator, and generator**.
+Iterable → An object that can be looped over (for loop).
+Examples: list, tuple, string, dict, set.
+
+nums = [1, 2, 3]   # iterable
+for n in nums:
+    print(n)
+Iterator → An object that remembers the current position and gives the next value using next().
+nums = [1, 2, 3]
+it = iter(nums)     # get iterator
+print(next(it))     # 1
+print(next(it))     # 2
+print(next(it))     # 3
+
+Generator → A special iterator created using yield, produces values on demand.
+def gen():
+    yield 1
+    yield 2
+    yield 3
+g = gen()
+print(next(g))   # 1
+print(next(g))   # 2
+
+5. Explain **list comprehension** with an example.
+# Normal way
+squares = []
+for i in range(1, 6):
+    squares.append(i*i)
+# List comprehension way
+squares = [i*i for i in range(1, 6)]
+print(squares)  # [1, 4, 9, 16, 25]
+
+6. What is the difference between **classmethod, staticmethod, and instance method**?
+instance Method (default) → Works with object’s data (self).
+class Demo:
+    def instance_method(self):
+        print("I can access object data!")
+
+Class Method → Works with class data (cls). Use @classmethod.
+class Demo:
+    count = 0
+    @classmethod
+    def class_method(cls):
+        print("I can access class data:", cls.count)
+
+Static Method → Independent, doesn’t use object or class data. Use @staticmethod.
+class Demo:
+    @staticmethod
+    def static_method():
+        print("I don’t use class or object data")
+
+7. Explain **Python’s OOP concepts**: inheritance,polymorphism, encapsulation.
+Inheritance → Child class gets features of parent.
+class Animal:
+    def sound(self): print("Some sound")
+class Dog(Animal):
+    def sound(self): print("Bark")
+
+Polymorphism → Same method, different behavior.
+for animal in [Dog(), Animal()]:
+    animal.sound()
+
+Encapsulation → Hiding data, using getters/setters.
+class Person:
+    def __init__(self, name):
+        self.__name = name  # private
+    def get_name(self): return self.__name
+
+
+8. What are **magic/dunder methods** in Python? Give examples (__str__, __init__).
+*Dunder (double underscore) methods are special methods Python calls automatically.
+Examples:
+class Book:
+    def __init__(self, title):
+        self.title = title
+    
+    def __str__(self):
+        return f"Book: {self.title}"
+b = Book("Python 101")
+print(b)   # calls __str__
+
+9. Explain **Python’s Global Interpreter Lock (GIL)**. Why is it important?
+Python uses a lock (GIL) that allows only one thread to execute Python bytecode at a time.
+It prevents memory corruption in multi-threaded programs.
+But it also means multi-threading is not true parallel in CPU-bound tasks.
+ 
+10. Difference between **deepcopy vs copy.copy()** in Python. 
+Shallow Copy (copy.copy)
+Copies only the top-level object.
+Inner objects are shared (same reference).
+
+import copy
+list1 = [[1, 2], [3, 4]]
+shallow = copy.copy(list1)
+shallow[0][0] = 99
+print(list1)   # [[99, 2], [3, 4]]  (changed!)
+
+Deep Copy (copy.deepcopy)
+Copies the object and all nested objects.
+Inner objects are independent.
+
+deep = copy.deepcopy(list1)
+deep[0][0] = 100
+print(list1)   # [[99, 2], [3, 4]] (unchanged!)
+
+                                  Data Handling & Error Management
+1. Explain **try, except, finally, else** in Python.
+try → put the risky code here.
+except → what to do if an error happens.
+else → runs only if NO error happens.
+finally → always runs (cleanup code).
+Example
+try:
+    x = int("123")
+    print("Conversion successful:", x)
+except ValueError:
+    print("Error: invalid number")
+else:
+    print("No error occurred ")
+finally:
+    print("This will always run ")
+
+2. What are **custom exceptions**? How do you create one?
+Sometimes built-in exceptions aren’t enough.
+You can create your own by inheriting from Exception.
+Example:
+class TooYoungError(Exception):
+    pass
+def check_age(age):
+    if age < 18:
+        raise TooYoungError("You are too young! 🚫")
+    else:
+        print("You are allowed ")
+try:
+    check_age(15)
+except TooYoungError as e:
+    print("Custom Exception Caught:", e)
+
+3. Explain **with statement** and context managers in Python.
+The with statement is used for resource management (like files, database connections).
+It automatically handles setup and cleanup.
+Example with file:
+with open("sample.txt", "w") as f:
+    f.write("Hello, Python!")
+4. What are **lambda functions**? Give an example with map, filter, reduce. 
+Lambda = small anonymous function (one line).
+👉 Syntax: lambda arguments: expression
+
+Example:
+square = lambda x: x*x
+print(square(5))  # 25
+
+ Using with map, filter, reduce:
+
+from functools import reduce
+nums = [1, 2, 3, 4, 5]
+# map -> apply function to each element
+squares = list(map(lambda x: x*x, nums))
+print("Squares:", squares)
+# filter -> keep only even numbers
+evens = list(filter(lambda x: x%2==0, nums))
+print("Evens:", evens)
+# reduce -> combine into one value
+sum_all = reduce(lambda x, y: x+y, nums)
+print("Sum:", sum_all)
+
+
+
+
+
+5. Difference between **isinstance() vs type()**.
+
+type() → checks the exact type of an object.
+isinstance() → checks if object is an instance of a class or its subclasses.
+
+class Animal:
+ pass
+class Dog(Animal):
+ pass
+d = Dog()
+print(type(d) == Dog)        # True
+print(isinstance(d, Dog))    # True
+print(isinstance(d, Animal)) # True (since Dog is subclass of Animal)
+
+
+

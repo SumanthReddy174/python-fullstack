@@ -1,9 +1,12 @@
-#copy.copy
-import copy
-list1=[[1,2],[3,4]]
-shallow=copy.copy(list1)
-shallow[0][0]=99
-print(list1)
+#largest number
+numbers = [10, 45, 23, 67, 89, 12]
+largest = max(numbers)
+print("Largest number is:", largest)
+
+#sorting method
+numbers = [10, 45, 23, 67, 89, 12]
+numbers.sort()
+print("Largest number is:", numbers[-1])
 
 
 

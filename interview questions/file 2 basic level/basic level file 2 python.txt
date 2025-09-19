@@ -1,0 +1,27 @@
+basic level
+
+1. What are Python’s key features?
+*Python is an easy-to-learn, high-level, and interpreted language.
+*It is dynamically typed and handles memory automatically.
+*Python supports multiple styles like functions, OOP, and functional programming.
+*It is cross-platform, open-source, and has a huge library + community support.
+
+2. Why is Python called an interpreted language?
+Python is called interpreted because the code is executed line by line by the Python interpreter, 
+without needing to be compiled into machine code first.
+
+3. What happens if indentation is incorrect in Python?
+Indentation = spaces at the start of a line (used to define blocks like loops, if, functions).
+If indentation is wrong, Python raises an IndentationError (or sometimes unexpected behavior).
+Example (wrong indentation):
+if True:
+print("Hello")   #  IndentationError
+
+Correct version:
+if True:
+    print("Hello")   #  works fine
+4. What are Python keywords? Can you use them as variable names?
+Python keywords are reserved words that have special meaning in the language. You cannot use them as variable names.
+Examples: if, else, for, while, def, class, import, return, try, except.
+
+

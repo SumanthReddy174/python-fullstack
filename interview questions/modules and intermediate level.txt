@@ -1,0 +1,64 @@
+                   Modules & Intermediate Concepts
+1. Difference between **module and package** in Python.
+Module → A single Python file (.py) that contains code (functions, classes, variables).
+Package → A folder containing multiple modules + a special __init__.py file.
+
+2. What are **Python namespaces and scope** (LEGB rule)?
+Namespace = A container (like a dictionary) where names (variables) are mapped to objects (values).
+ Scope = Where a variable is accessible.
+Python follows the LEGB rule:
+L → Local (inside a function).
+E → Enclosing (nested function).
+G → Global (file-level).
+B → Built-in (default Python functions like len, print).
+Example
+x = "global"  # Global
+def outer():
+    x = "enclosing"
+    def inner():
+        x = "local"
+        print(x)  # local
+    inner()
+outer()
+3. Explain **import vs from-import**.
+import → brings in the whole module.
+import math
+print(math.sqrt(16))  # 4.0
+
+from-import → brings only specific functions/classes.
+from math import sqrt
+print(sqrt(16))  # 4.0
+
+4. What is **virtual environment (venv)** in Python? Why is it needed?
+A virtual environment = a private workspace where your project has its own Python + libraries.
+Why? → To avoid conflicts between projects
+
+5. Difference between **shallow copy, deep copy, assignment operator**.
+*Assignment (=) → Just another name for the same object.
+*Shallow copy → Makes a new object, but nested objects are shared.
+*Deep copy → Makes a full independent copy (including nested objects).
+
+import copy
+
+# Assignment
+a = [1, [2, 3]]
+b = a
+b[0] = 99
+print("Assignment:", a)   # [99, [2, 3]]
+
+# Shallow copy
+a = [1, [2, 3]]
+b = copy.copy(a)
+b[1][0] = 99
+print("Shallow copy:", a)  # [1, [99, 3]]
+
+# Deep copy
+a = [1, [2, 3]]
+b = copy.deepcopy(a)
+b[1][0] = 99
+print("Deep copy:", a)    # [1, [2, 3]]
+
+Assignment = sharing the same toy .
+Shallow copy = you get a new toy box, but dolls inside are still shared.
+Deep copy = you get a completely new toy box with your own dolls.
+

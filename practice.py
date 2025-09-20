@@ -1,14 +1,15 @@
-#largest number
-numbers = [10, 45, 23, 67, 89, 12]
-largest = max(numbers)
-print("Largest number is:", largest)
+#while loop
+count=1
+while count<=10:
+    print("hello")
+    count+=1
+print("count" ,count)
 
-#sorting method
-numbers = [10, 45, 23, 67, 89, 12]
-numbers.sort()
-print("Largest number is:", numbers[-1])
-
-
+#while
+i=1
+while i<=100:
+    print(i)
+    i+=1
 
 
 

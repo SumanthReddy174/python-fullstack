@@ -1,0 +1,71 @@
+                           Data Types & Variables
+
+6. What are mutable and immutable data types in Python?
+Mutable data types → Can be changed (modified) after creation.
+Immutable data types → Cannot be changed after creation (any change creates a new object).
+Mutable (changeable) examples:
+list, dict, set
+
+# List (mutable)
+nums = [1, 2, 3]
+nums[0] = 99   # modify element
+print(nums)    # [99, 2, 3]
+
+ Immutable (unchangeable) examples:
+int, float, string, tuple
+
+# String (immutable)
+name = "hello"
+name = name + " world"   # makes NEW string
+print(name)              # "hello world"
+
+7. Explain the difference between `list`, `tuple`, `set`, and `dict`
+1. List
+
+*Ordered collection (keeps elements in the order you put them).
+*Allows duplicates.
+*Mutable (you can change elements.
+
+2.tuple
+*Ordered collection.
+*Allows duplicates.
+*Immutable (cannot change after creation)
+
+3. Set
+
+*Unordered collection (no fixed position).
+*Does not allow duplicates.
+*Mutable (can add/remove elements).
+
+8. What are Python’s built-in data types?
+Python Built-in Data Types
+
+*Numeric Types → int, float, complex
+*Sequence Types → list, tuple, range
+*Text Type → str
+*Set Types → set, frozenset
+*Mapping Type → dict
+*Boolean Type → bool
+*Binary Types → bytes, bytearray, memoryview
+
+9. What is the difference between `is` and `==` operators?
+1. == (Equality Operator)
+*Checks if values are the same.
+*Even if stored in different memory locations, it only cares about the value.
+2. is (Identity Operator)
+*Checks if two variables point to the same object in memory.
+*Compares identity, not value.
+
+10. How are integers and floats stored in memory in Python?
+In Python, integers are objects, not just raw numbers.
+
+Each integer object has:
+*Type info → tells Python it’s an int.
+*Reference count → how many variables are using it.
+*The actual value of the integer
+
+**Python’s float is implemented using the C double type (64-bit floating point).
+*It follows the IEEE 754 standard:
+*1 bit → sign (positive or negative)
+*11 bits → exponent
+*52 bits → fraction (mantissa).

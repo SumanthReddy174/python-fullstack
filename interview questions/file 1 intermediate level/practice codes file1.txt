@@ -1,0 +1,46 @@
+                  coding practice
+ 1.Reverse a string without using slicing.
+program:
+
+text = "hello"
+reversed_text = "".join(reversed(text))
+print(reversed_text)
+
+2.Find the largest number in a list.
+program:
+numbers = [10, 45, 23, 67, 89, 12]
+largest = max(numbers)
+print("Largest number is:", largest)
+
+
+
+3. Count vowels in a string.
+program 
+
+text = "Beautiful Day"
+vowels = "aeiouAEIOU"
+vowel_count = {}
+
+for char in text:
+    if char in vowels:
+        vowel_count[char] = vowel_count.get(char, 0) + 1
+
+print("Vowel counts:", vowel_count)
+
+
+
+4.Write a program to check if a number is **prime**.
+program:
+num = 29
+
+if num > 1:
+    for i in range(2, num):
+        if num % i == 0:   # divisible by some number
+            print(num, "is NOT a prime number")
+            break
+    else:
+        print(num, "is a PRIME number")
+else:
+    print(num, "is NOT a prime number")
+
+

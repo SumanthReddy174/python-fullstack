@@ -1,0 +1,64 @@
+                     Lists, Strings & Collections
+11. What is the difference between `append()` and `extend()` in lists?
+
+ **append() in Python
+append() → adds one item at the end of the list.
+If you give it a list, it adds the whole list as a single item. 
+
+ **extend() in Python
+extend() → adds each element separately from another list (or iterable).
+
+12. What is the difference between shallow copy and deep copy?
+
+1. Shallow Copy
+Makes a new object,
+But inside, it copies references (links) to the original inner objects.
+If you change something inside the nested objects, it affects both copies.
+
+2. Deep Copy
+Makes a new object,
+And also recursively copies all inner objects.
+Changing nested objects does NOT affect the original.
+
+13. How do you remove duplicates from a list?
+program:
+
+numbers = [1, 2, 2, 3, 4, 4, 5]
+unique = list(set(numbers))
+print(unique)   # [1, 2, 3, 4, 5] (order not guaranteed)
+
+14. How do slicing operations work on lists and strings?
+
+*start → where to begin (index)
+*stop → where to stop (but not included)
+*step → how many steps to jump
+
+example of list
+
+numbers = [10, 20, 30, 40, 50, 60]
+
+print(numbers[1:4])    # [20, 30, 40]   (from index 1 to 3)
+print(numbers[:3])     # [10, 20, 30]   (from start to index 2)
+print(numbers[3:])     # [40, 50, 60]   (from index 3 to end)
+print(numbers[::2])    # [10, 30, 50]   (step 2 → skip every 1 item)
+print(numbers[::-1])   # [60, 50, 40, 30, 20, 10] (reversed list)
+
+
+example of string
+
+text = "PYTHON"
+
+print(text[0:4])    # 'PYTH' (first 4 letters)
+print(text[:3])     # 'PYT'  (first 3 letters)
+print(text[3:])     # 'HON'  (from 4th letter to end)
+print(text[::2])    # 'PTO'  (every 2nd letter)
+print(text[::-1])   # 'NOHTYP' (reversed string)
+
+15. How do you reverse a string in Python?
+text = "PYTHON"
+reversed_text = text[::-1]
+print(reversed_text)  # NOHTYP
+
+
+
+

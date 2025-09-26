@@ -1,0 +1,60 @@
+*Implement a custom **iterator** class that returns Fibonacci numbers.
+
+# Fibonacci numbers using loop
+a, b = 0, 1
+for _ in range(8):   # first 8 numbers
+    print(a, end=" ")
+    a, b = b, a + b
+
+
+* Write a function using **decorator** that logs the execution time of another function.
+
+import time
+
+def time_logger(func):
+    def wrapper():
+        start = time.time()
+        func()
+        end = time.time()
+        print("Execution time:", end - start, "seconds")
+    return wrapper
+
+@time_logger
+def my_function():
+    for i in range(1000000):
+        pass
+
+my_function()
+
+
+
+* Implement a **generator** for even numbers up to N.
+
+
+def even_numbers(n):
+    for i in range(n+1):
+        if i % 2 == 0:
+            yield i
+
+print(list(even_numbers(10)))
+
+
+
+* Write code to **flatten a nested list** (e.g., `[[1,2],[3,4]] → [1,2,3,4]`).
+
+nested = [[1, 2], [3, 4]]
+flat = []
+
+for sublist in nested:
+    for item in sublist:
+        flat.append(item)
+
+print(flat)
+
+
+
+
+
+
+
+

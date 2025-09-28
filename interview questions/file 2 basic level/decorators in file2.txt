@@ -1,0 +1,88 @@
+        ****Decorators & Context Managers***
+
+41. What are decorators in Python?
+
+*A decorator is a function that takes another function and adds extra features to it without changing its code.
+*You apply it using @decorator_name above the function.
+
+def my_decorator(func):
+    def wrapper():
+        print("Before function 🎬")
+        func()
+        print("After function 🎉")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello 👋")
+
+say_hello()
+
+42. Can a function return another function in Python?
+
+*In Python, functions are first-class citizens.
+*A function can return another function.
+
+def outer():
+    def inner():
+        return "I am inner function"
+    return inner
+
+f = outer()
+print(f())  # I am inner function
+
+
+
+43. What is a higher-order function?
+
+A function is called higher-order if it takes another function as input or returns a function.
+
+Examples in Python: map(), filter(), sorted(), reduce()
+
+
+
+def square(x):
+    return x * x
+
+nums = [1, 2, 3, 4]
+result = list(map(square, nums))  # map takes function + list
+print(result)  # [1, 4, 9, 16]
+
+
+44. What is a context manager in Python?
+*A context manager is used to manage resources (like files, database connections).
+*The most common example is with open(...) as f: for files.
+*Context managers ensure that resources are closed/released properly even if an error happens.
+
+ Example:
+
+with open("test.txt", "w") as f:
+    f.write("Hello World")
+
+
+45. What is the difference between `with` and try-finally?
+
+*with is a shortcut in Python that makes resource handling (like files, databases, locks) easier.
+*It uses a context manager to automatically clean up after you’re done.
+
+with open("test.txt", "w") as f:
+    f.write("Hello World")
+
+try finally
+
+*You open/use a resource (like a file).
+*You must manually close it in finally.
+*If you forget, the resource stays open → bad
+
+
+f = open("test.txt", "w")  # open file
+try:
+    f.write("Hello World")
+finally:
+    f.close()  # must close manually
+
+
+
+
+
+

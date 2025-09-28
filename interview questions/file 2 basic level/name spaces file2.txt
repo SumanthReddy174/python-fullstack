@@ -1,0 +1,90 @@
+      ****Namespaces & Scope****
+
+51. What is the LEGB rule in Python?
+
+LEGB rule explains how Python looks for variables when you use them:
+
+*L → Local → Inside the current function.
+*E → Enclosing → Inside enclosing (outer) functions (for nested functions).
+*G → Global → Defined at the top level of the file.
+*B → Built-in → Python’s built-in names (like print, len, sum).
+
+x = "Global"
+
+def outer():
+    x = "Enclosing"
+    def inner():
+        x = "Local"
+        print(x)   # Local
+    inner()
+
+outer()
+
+52. What is the difference between global and local variables?
+*global allows a function to modify a global variable.
+*Without it, Python creates a local variable.
+
+ Example:
+
+x = 10
+
+def update():
+    global x
+    x = 20   # modifies global variable
+    print("Inside:", x)
+
+update()
+print("Outside:", x)
+
+
+53. How do you use the `global` keyword in Python?
+
+*global allows a function to modify a global variable.
+*Without it, Python creates a local variable.
+
+x = 10
+
+def update():
+    global x
+    x = 20   # modifies global variable
+    print("Inside:", x)
+
+update()
+print("Outside:", x)
+
+54. How do you use the `nonlocal` keyword?
+
+nonlocal is used in nested functions.
+
+It tells Python to use a variable from the enclosing function’s scope (not local, not global).
+
+Example:
+
+def outer():
+    x = "Enclosing"
+    def inner():
+        nonlocal x
+        x = "Changed by inner"
+    inner()
+    print(x)
+
+
+
+55. What happens when two variables with the same name exist in different scopes?
+*Python follows the LEGB rule to decide which variable to use.
+*The innermost scope always wins.
+
+x = "Global"
+
+def outer():
+    x = "Enclosing"
+    def inner():
+        x = "Local"
+        print(x)   # Local wins
+    inner()
+    print(x)       # Enclosing wins
+
+outer()
+print(x)           # Global wins
+
+

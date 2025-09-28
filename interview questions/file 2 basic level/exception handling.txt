@@ -1,0 +1,62 @@
+Exception Handling
+
+37. Explain `try`, `except`, `finally`, and `else`.
+try:
+    x = int(input("Enter a number: "))
+    print("Number is:", x)
+except ValueError:
+    print("Oops! That's not a number.")
+else:
+    print("No errors! Good job ✅")
+finally:
+    print("This always runs, end of program 🏁")
+
+explain
+try → Code that might cause an error
+
+except → Handles the error if it occurs
+
+else → Runs if no error occurs
+
+finally → Runs always, error or no error
+
+
+38. What are custom exceptions? How do you create them?
+**You can create your own exception by inheriting from Exception.
+
+class MyError(Exception):
+    pass
+
+def check_age(age):
+    if age < 18:
+        raise MyError("Age must be at least 18")
+
+try:
+    check_age(15)
+except MyError as e:
+    print("Custom Error:", e)
+
+
+
+39. Can one `except` block handle multiple exceptions?
+
+try:
+    x = int("abc")
+    y = 5 / 0
+except (ValueError, ZeroDivisionError) as e:
+    print("Error occurred:", e)
+
+
+
+
+
+
+40. What happens if there is no matching `except` block for an error?
+f an error occurs and no except matches, the program stops and shows a traceback.
+
+x = 5 / 0  # ZeroDivisionError
+
+
+No except → Program crashes
+
+Traceback shows where and why

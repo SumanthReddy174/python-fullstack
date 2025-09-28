@@ -1,0 +1,93 @@
+                    ****functions*****
+
+21. What are default arguments in Python functions?
+*In Python, when you define a function, you can give a parameter a default value.
+* If the user doesn’t provide a value, Python will use the default one.
+
+*****Function with default argument
+def greet(name="Friend"):
+    print("Hello,", name)
+
+greet()           # No argument given
+greet("Alice")    # Argument given
+
+22. What is the difference between \*args and \*\*kwargs?
+
+*args (Non-Keyword Arguments)
+** Collects extra positional arguments (values without names) into a tuple.
+
+ Example
+def add_numbers(*args):
+    print(args)  # shows tuple
+    print("Sum =", sum(args))
+
+add_numbers(2, 4, 6)
+
+**kwargs (Keyword Arguments)
+
+*** Collects extra keyword arguments (values with names) into a dictionary.
+Example
+def show_info(**kwargs):
+    print(kwargs)  # shows dictionary
+    for key, value in kwargs.items():
+        print(key, ":", value)
+
+show_info(name="Alice", age=20, grade="A")
+
+23. Explain pass-by-value vs pass-by-reference in Python.
+*Pass by value → A copy of the data is given. Changes don’t affect the original.
+*Pass by reference → A reference (address) of the data is given. Changes affect the original.
+
+
+***Immutable (int → behaves like pass-by-value)
+def change_num(x):
+    x = 10
+    print("Inside function:", x)
+a = 5
+change_num(a)
+print("Outside function:", a)
+
+****Mutable (list → behaves like pass-by-reference)
+
+def change_list(lst):
+    lst.append(100)
+    print("Inside function:", lst)
+numbers = [1, 2, 3]
+change_list(numbers)
+print("Outside function:", numbers)
+
+
+24. Can functions be assigned to variables in Python?
+
+In Python, functions are “first-class objects”, which means:
+👉 You can assign a function to a variable,
+👉 pass it as an argument to another function,
+👉 and even return it from another function.
+ Example 1: Assigning a function to a variable
+def greet():
+    return "Hello!"
+
+say_hello = greet   # assign function to variable
+print(say_hello())  # call using new name
+
+
+Output:
+
+Hello!
+
+
+ Example 2: Passing a function as an argument
+def square(x):
+    return x * x
+
+def apply_func(func, num):
+    return func(num)
+
+print(apply_func(square, 5))
+
+
+
+
+
+
+

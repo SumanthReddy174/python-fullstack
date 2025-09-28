@@ -1,0 +1,163 @@
+                   *****OOP in Python********
+
+26. What are classes and objects in Python?
+         **class**
+*A class is like a blueprint or plan for making objects.
+*It defines properties (variables) and behaviors (methods)
+         **object**
+*An object is a real thing created from the class (an instance).
+*You can make many objects from one class, each with its own values.
+
+******program
+# Define a class (blueprint)
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand   # property
+        self.color = color   # property
+    
+    def drive(self):        # method (behavior)
+        print(self.brand, "is driving 🚗")
+
+# Create objects (real cars)
+car1 = Car("BMW", "Red")
+car2 = Car("Audi", "Blue")
+
+# Use objects
+print(car1.brand, car1.color)   # BMW Red
+car1.drive()                    # BMW is driving 🚗
+
+print(car2.brand, car2.color)   # Audi Blue
+car2.drive()                    # Audi is driving 🚗
+
+
+27. What are instance methods, class methods, and static methods?
+1. Instance Methods
+
+👉 Most common type of methods.
+👉 They work with objects (instances) of the class.
+👉 Always take self as the first parameter (represents the current object).
+
+Example
+class Student:
+    def __init__(self, name):
+        self.name = name
+    
+    def say_hello(self):   # Instance method
+        print("Hello, I am", self.name)
+
+s1 = Student("Alice")
+s1.say_hello()   # calls instance method
+
+
+
+
+ 2. Class Methods
+
+👉 They work with the class itself, not objects.
+👉 Always take cls as the first parameter (represents the class).
+👉 Declared using @classmethod.
+
+ Example
+class Student:
+    school = "ABC School"   # class variable
+
+    @classmethod
+    def show_school(cls):   # Class method
+        print("School is:", cls.school)
+
+Student.show_school()
+
+
+🔹 3. Static Methods
+
+* Do not need self (object) or cls (class).
+* They behave like normal functions, but placed inside a class for organization.
+* Declared using @staticmethod.
+
+Example
+class Math:
+    @staticmethod
+    def add(a, b):   # Static method
+        return a + b
+
+print(Math.add(5, 3)
+
+28. What are dunder (magic) methods in Python?
+Dunder = Double UNDERscore (like __init__, __str__).
+* These are special methods in Python that start and end with __.
+example:
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+s = Student("Alice")   # __init__ runs here
+print(s.name)
+
+29. What is the purpose of the `__init__` method?
+
+__init__ is a special method in Python classes.
+
+It is called automatically when a new object is created.
+
+Its main purpose is to initialize the object → give it properties (values).
+
+example
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name  # initialize name
+        self.age = age    # initialize age
+
+# Create an object
+s1 = Student("Alice", 20)
+
+print(s1.name)  # Alice
+print(s1.age)   # 20
+
+
+30. What is polymorphism in Python?
+Polymorphism means “many forms”.
+In Python, it means the same function or operator can work in different ways depending on the object.
+Types of Polymorphism in Python
+1. Polymorphism with Functions (Method Overriding)
+
+A child class can override a method of the parent class.
+
+class Animal:
+    def speak(self):
+        print("Some sound")
+
+class Dog(Animal):
+    def speak(self):
+        print("Bark 🐶")
+
+class Cat(Animal):
+    def speak(self):
+        print("Meow 🐱")
+
+# Using same method on different objects
+a1 = Dog()
+a2 = Cat()
+
+a1.speak()  # Bark 🐶
+a2.speak()  # Meow 🐱
+
+2. Polymorphism with Operators
+
+The + operator can work on numbers, strings, and lists differently.
+
+print(2 + 3)          # 5 (numbers)
+print("Hi " + "Bob")  # Hi Bob (strings)
+print([1,2] + [3,4])  # [1, 2, 3, 4] (lists)
+
+3. Polymorphism with Functions
+
+Functions can take different types of objects.
+
+def add(a, b):
+    return a + b
+
+print(add(2, 3))        # 5
+print(add("Hi ", "Bob")) # Hi Bob
+

@@ -1,0 +1,60 @@
+              Modules & Imports
+
+46. What is the difference between a module and a package?
+
+Module → A single Python file (.py) that contains functions, classes, or variables.
+
+Package → A folder (directory) that contains multiple modules and a special __init__.py file.
+
+
+47. What does `__name__ == "__main__"` mean in Python?
+
+*Every Python file has a built-in variable __name__.
+*If the file is run directly → __name__ == "__main__".
+*If the file is imported → __name__ becomes the module’s name.
+
+Example (my_module.py):
+
+def hello():
+    print("Hello!")
+
+if __name__ == "__main__":
+    hello()
+
+
+
+
+48. What is the difference between `import` and `from-import`?
+
+*import → Imports the whole module. You must use module_name.function().
+*from-import → Imports specific functions/variables directly.
+
+ Example:
+
+import math
+print(math.sqrt(16))  # need module name
+
+from math import sqrt
+print(sqrt(16))       # 
+
+
+49. How do relative imports work in Python?
+
+*Relative imports are used inside packages to import from other modules in the same package.
+*Use . (current directory) or .. (parent directory).
+
+
+50. How does Python search for modules when importing?
+
+Current directory (where your script is running).
+*PYTHONPATH (environment variable if set).
+*Standard library (built-in Python modules).
+*site-packages (third-party installed packages, like NumPy).
+
+example
+import sys
+print(sys.path)
+
+
+
+

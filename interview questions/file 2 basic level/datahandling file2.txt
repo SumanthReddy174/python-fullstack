@@ -1,0 +1,93 @@
+                 ***Data Handling***
+
+56. How do you read and write files in Python.
+
+you use the built-in open() function.
+
+Example:
+
+# Writing to a file
+with open("example.txt", "w") as f:
+    f.write("Hello Python!")
+
+# Reading from a file
+with open("example.txt", "r") as f:
+    content = f.read()
+    print(content)
+
+
+"w" → write (creates/overwrites file)
+
+"r" → read
+
+"a" → append (adds to file)
+
+"with" automatically closes the file after use.
+
+
+57. What is the difference between text mode and binary mode in file handling?
+
+Text mode ("t") → Default, reads/writes strings (str).
+
+Binary mode ("b") → Reads/writes bytes (bytes). Used for images, videos, etc.
+
+✅ Example:
+
+# Text mode
+with open("textfile.txt", "w") as f:
+    f.write("Hello World")
+
+# Binary mode
+with open("image.png", "rb") as f:
+    data = f.read()   # data is bytes
+
+58. How do you handle CSV files in Python?
+
+import csv
+
+# Writing to CSV
+with open("data.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Name", "Age"])
+    writer.writerow(["Alice", 21])
+    writer.writerow(["Bob", 25])
+
+# Reading from CSV
+with open("data.csv", "r") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
+
+
+59. How do you serialize and deserialize JSON in Python?
+Serialize (Python → JSON) = json.dumps() / json.dump()
+
+Deserialize (JSON → Python) = json.loads() / json.load()
+
+✅ Example:
+
+import json
+
+# Python dict
+data = {"name": "Alice", "age": 21}
+
+# Serialize → JSON string
+json_str = json.dumps(data)
+print(json_str)  # {"name": "Alice", "age": 21}
+
+# Deserialize → Python dict
+python_data = json.loads(json_str)
+print(python_data["name"])  # Alice
+
+
+60. How do you handle command-line arguments in Python?
+import argparse
+
+# Create parser
+parser = argparse.ArgumentParser()
+parser.add_argument("name", help="Your name")
+parser.add_argument("age", type=int, help="Your age")
+
+# Parse arguments
+args = parser.parse_args()
+print(f"Hello {args.name}, you are {args.age} years old.")

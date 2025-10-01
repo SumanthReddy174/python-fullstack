@@ -1,0 +1,83 @@
+*******Functional Programming************
+
+61. What is the difference between `map()`, `filter()`, and `reduce()`?
+
+*map(func, seq) → applies a function to every element.
+*filter(func, seq) → keeps only elements that pass a condition.
+*reduce(func, seq) → combines elements into a single result.
+
+✅ Example:
+
+from functools import reduce
+
+nums = [1, 2, 3, 4, 5]
+
+print(list(map(lambda x: x*2, nums)))      # map → [2, 4, 6, 8, 10]
+print(list(filter(lambda x: x%2==0, nums))) # filter → [2, 4]
+print(reduce(lambda x,y: x+y, nums))        # reduce → 15 (sum)
+
+
+62. What is a lambda function?
+
+A lambda function is a small, quick function written in one line (without def).
+
+✅ Example:
+
+# Normal function
+def square(x):
+    return x*x
+
+# Lambda function
+square_lambda = lambda x: x*x
+
+print(square(5))        # 25
+print(square_lambda(5)) # 25
+
+63. Can you give an example where `filter()` is useful?
+
+filter() is great when you want to pick only certain elements.
+
+✅ Example: Get even numbers
+
+nums = [1, 2, 3, 4, 5, 6]
+evens = list(filter(lambda x: x%2==0, nums))
+print(evens)  # [2, 4, 6]
+
+64. How does `reduce()` work in Python?
+
+reduce() applies a function again and again, reducing a list into one value.
+👉 Think: "Keep combining until only one is left."
+
+✅ Example: Multiply all numbers
+
+from functools import reduce
+
+nums = [1, 2, 3, 4]
+result = reduce(lambda x, y: x * y, nums)
+print(result)  # 24  (1*2*3*4)
+
+
+65. What is the difference between list comprehension and `map()`?
+
+*List comprehension → easier to read, flexible.
+*map() → function must be passed.
+
+✅ Example:
+
+nums = [1, 2, 3, 4]
+
+# List comprehension
+squares1 = [x*x for x in nums]
+
+# map()
+squares2 = list(map(lambda x: x*x, nums))
+
+print(squares1)  # [1, 4, 9, 16]
+print(squares2)  # [1, 4, 9, 16]
+
+
+
+
+
+
+---

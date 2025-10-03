@@ -1,0 +1,76 @@
+Lists, Strings & Collections
+
+6. Reverse a list **in place** without using `[::-1]` or `reverse()`.
+
+n place" means we don’t create a new list, we just rearrange the same one.
+ Trick: Swap first with last, second with second-last, and so on.
+
+ Code:
+
+def reverse_list(nums):
+    left = 0
+    right = len(nums) - 1
+    while left < right:
+        nums[left], nums[right] = nums[right], nums[left]  # swap
+        left += 1
+        right -= 1
+    return nums
+
+# Test
+lst = [1, 2, 3, 4, 5]
+print(reverse_list(lst))  # [5, 4, 3, 2, 1]
+
+
+
+
+7. Write code to flatten a nested list (e.g. `[[1,2],[3,4]] → [1,2,3,4]`).
+
+def flatten(nested):
+    flat = []
+    for sublist in nested:
+        for item in sublist:
+            flat.append(item)
+    return flat
+
+# Test
+print(flatten([[1, 2], [3, 4], [5, 6]]))  # [1, 2, 3, 4, 5, 6]
+
+
+8. Given a string, count the number of vowels and consonants.
+
+Vowels = a, e, i, o, u (sometimes y but we skip it).
+Consonants = all other alphabets.
+
+ Code:
+
+def count_vowels_consonants(s):
+    vowels = "aeiouAEIOU"
+    v_count = 0
+    c_count = 0
+    for ch in s:
+        if ch.isalpha():  # only check letters
+            if ch in vowels:
+                v_count += 1
+            else:
+                c_count += 1
+    return v_count, c_count
+
+# Test
+print(count_vowels_consonants("Hello World"))
+# (3 vowels, 7 consonants)
+
+9. Find the second largest number in a list.
+
+def second_largest(nums):
+    first = second = float('-inf')  # start with very small numbers
+    for n in nums:
+        if n > first:
+            second = first
+            first = n
+        elif n > second and n != first:
+            second = n
+    return second
+
+# Test
+print(second_largest([10, 20, 4, 45, 99]))  # 45
+

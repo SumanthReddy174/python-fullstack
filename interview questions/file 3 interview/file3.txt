@@ -1,0 +1,30 @@
+10. Rotate a list by `k` elements (circular shift).
+
+If we rotate [1, 2, 3, 4, 5] by k = 2 → the last 2 elements come to the front:
+
+👉 Output = [4, 5, 1, 2, 3]
+
+This is called a circular shift (like a wheel going round).
+
+Code (without using slicing)
+def rotate_list(nums, k):
+    n = len(nums)
+    k = k % n  # handle if k > length
+    for _ in range(k):
+        last = nums.pop()   # remove last element
+        nums.insert(0, last)  # put it at the front
+    return nums
+
+# Test
+print(rotate_list([1, 2, 3, 4, 5], 2))  # [4, 5, 1, 2, 3]
+
+
+
+*******Code (with slicing – easier)
+def rotate_list_slice(nums, k):
+    n = len(nums)
+    k = k % n
+    return nums[-k:] + nums[:-k]
+
+# Test
+print(rotate_list_slice([1, 2, 3, 4, 5], 2))  

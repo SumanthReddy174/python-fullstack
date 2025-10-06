@@ -1,0 +1,27 @@
+Control Flow & Loops
+
+
+11. Print the Fibonacci sequence up to `n` terms.
+
+def fibonacci(n):
+    a, b = 0, 1  # start with first two numbers
+    for i in range(n):
+        print(a, end=" ")  # print current number
+        a, b = b, a + b    # update to next two numbers
+
+# Test
+fibonacci(10)
+
+
+
+Step-by-step explanation:
+
+Start with two numbers → a = 0, b = 1.
+
+Print a.
+
+Then make a take b’s value, and b become the sum of both.
+
+Repeat this for n terms.
+
+

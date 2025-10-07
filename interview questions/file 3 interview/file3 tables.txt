@@ -1,0 +1,8 @@
+12. Write a program to print a multiplication table for a number.
+
+def multiplication_table(n):
+    for i in range(1, 11):   # 1 to 10
+        print(f"{n} x {i} = {n * i}")
+
+# Test
+multiplication_table(5)

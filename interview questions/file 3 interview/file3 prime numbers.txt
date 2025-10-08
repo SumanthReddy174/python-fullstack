@@ -1,0 +1,15 @@
+13. Write code to find all prime numbers up to `n`
+
+
+def primes_up_to_n(n):
+    for num in range(2, n + 1):  # start from 2
+        is_prime = True          # assume the number is prime
+        for i in range(2, int(num ** 0.5) + 1):  # check up to square root
+            if num % i == 0:
+                is_prime = False  # not prime if divisible
+                break
+        if is_prime:
+            print(num, end=" ")
+
+# Test
+primes_up

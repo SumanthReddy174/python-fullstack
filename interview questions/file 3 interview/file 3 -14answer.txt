@@ -1,0 +1,61 @@
+14. Implement a function to check if two strings are anagrams.
+
+
+Two strings are anagrams if they contain the same characters but in a different order.
+
+Example:
+
+"listen" → "silent" ✅ (same letters)
+"hello" → "world" ❌ (different letters)
+
+✅ Method 1: Using Sorting
+def is_anagram(str1, str2):
+    # remove spaces and convert to lowercase
+    str1 = str1.replace(" ", "").lower()
+    str2 = str2.replace(" ", "").lower()
+
+    # check if sorted letters are the same
+    return sorted(str1) == sorted(str2)
+
+# Test
+print(is_anagram("listen", "silent"))   # ✅ True
+print(is_anagram("hello", "world"))     # ❌ False
+
+✅ Method 2: Using Dictionary (Count characters manually)
+def is_anagram(str1, str2):
+    str1 = str1.replace(" ", "").lower()
+    str2 = str2.replace(" ", "").lower()
+
+    if len(str1) != len(str2):
+        return False
+
+    count = {}
+
+    # count letters in str1
+    for char in str1:
+        count[char] = count.get(char, 0) + 1
+
+    # subtract letters in str2
+    for char in str2:
+        if char in count:
+            count[char] -= 1
+        else:
+            return False
+
+    # check all counts are zero
+    for value in count.values():
+        if value != 0:
+            return False
+
+    return True
+
+# Test
+print(is_anagram("triangle", "integral"))  # ✅ True
+print(is_anagram("apple", "papel"))        # ✅ True
+print(is_anagram("car", "rat"))            # ❌ False
+
+🧠 Explanation:
+
+Remove spaces and lowercase both strings.
+
+Compare each character’s count — if all match, it’s an anagram!

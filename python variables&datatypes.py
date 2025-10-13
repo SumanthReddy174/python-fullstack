@@ -1,4 +1,4 @@
-#variables-a variable is a name given in memory locaation in program
+#variables-a variable is a name given in memory location in program
 name="jhon"
 age=23
 height=6.1
@@ -6,17 +6,14 @@ print("My name is:",name)
 print("My age is:",age)
 print("height is:",height)
 
-#2
-Simple variable example
+#2 simple
+
 a = 10
 b = 20
 c = a + b
 print("Sum:", c)
 
-#3
-Dynamic typing example
-
-In Python, variables can change their type easily.
+#3Dynamic typing example can change their type easily.
 
 x = 10
 print(x, type(x))
@@ -27,7 +24,8 @@ print(x, type(x))
 x = 3.5
 print(x, type(x))
 
-Add two numbers
+#add
+
 a = 5
 b = 8
 sum = a + b

@@ -1,0 +1,40 @@
+15. Find all numbers between 1 and 100 divisible by both 3 and 5.
+
+
+Step 1:
+
+If a number is divisible by both 3 and 5,
+it means it must be divisible by their Least Common Multiple (LCM).
+
+LCM of 3 and 5 = 15
+
+👉 So we need numbers that are multiples of 15.
+
+🧮 Step 2:
+
+Now we check numbers from 1 to 100.
+
+Multiples of 15 are:
+
+15, 30, 45, 60, 75, 90
+
+💻 Step 3: Write the Python code
+for i in range(1, 101):  # numbers from 1 to 100
+    if i % 3 == 0 and i % 5 == 0:  # divisible by both 3 and 5
+        print(i)
+
+🧾 Output:
+15
+30
+45
+60
+75
+90
+
+✅ Explanation (simple words):
+
+The loop checks each number from 1 to 100.
+
+If a number divides exactly by 3 and 5 (no remainder), it prints it.
+
+These are the numbers that are divisible by both 3 and 5.

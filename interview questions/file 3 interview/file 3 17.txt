@@ -1,0 +1,27 @@
+17. Implement a recursive function to calculate factorial.
+What is Factorial?
+
+Factorial of a number n (written as n!) = n × (n-1) × (n-2) × ... × 1
+
+Example:
+
+5! = 5 × 4 × 3 × 2 × 1 = 120
+0! = 1 (by definition)
+
+🔹 What is Recursion?
+
+Recursion = a function that calls itself.
+
+Think of it like stacking boxes: solve the top box, then the next, until the last box.
+
+
+program
+def factorial(n):
+    if n == 0 or n == 1:  # base case
+        return 1
+    else:
+        return n * factorial(n - 1)  # recursive call
+
+# Test
+print(factorial(5))  # 120
+print(factorial(0))  # 1

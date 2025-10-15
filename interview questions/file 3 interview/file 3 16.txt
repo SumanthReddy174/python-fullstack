@@ -1,0 +1,15 @@
+
+## 🔹 Functions
+
+16. Write a function that takes \*args and \*\*kwargs and prints them separately.
+*args → collects all positional arguments into a tuple.
+
+**kwargs → collects all keyword arguments into a dictionary.
+
+
+def show_args_kwargs(*args, **kwargs):
+    print("Positional arguments (*args):", args)
+    print("Keyword arguments (**kwargs):", kwargs)
+
+# Test
+show_args_kwargs(10, 20, 30, name="Alice", age=25)

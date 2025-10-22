@@ -1,0 +1,14 @@
+19. Write a function that accepts a list and returns a new list with only unique elements.
+
+
+
+def unique_list(lst):
+    new_list = []  # empty list to store unique items
+    for item in lst:
+        if item not in new_list:  # check if it's already added
+            new_list.append(item)
+    return new_list
+
+# Test
+numbers = [1, 2, 2, 3, 4, 4, 5]
+print(unique_list(numbers))

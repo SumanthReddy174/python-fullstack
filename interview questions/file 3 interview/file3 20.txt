@@ -1,0 +1,14 @@
+20. Write a function that returns the sum of digits of a number.
+
+
+Method 1: Using while loop
+def sum_of_digits(num):
+    total = 0
+    while num > 0:
+        digit = num % 10      # get the last digit
+        total += digit        # add it to total
+        num = num // 10       # remove the last digit
+    return total
+
+# Test
+print(sum_of_digits(1234))   

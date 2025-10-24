@@ -1,0 +1,29 @@
+ OOP in Python
+
+21. Create a class `BankAccount` with methods `deposit`, `withdraw`, and `check_balance`.
+
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner          # account holder's name
+        self.balance = balance      # starting balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposited ₹{amount}. New balance: ₹{self.balance}")
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Insufficient balance ❌")
+        else:
+            self.balance -= amount
+            print(f"Withdrew ₹{amount}. New balance: ₹{self.balance}")
+
+    def check_balance(self):
+        print(f"Account balance for {self.owner}: ₹{self.balance}")
+
+# Test the class
+account1 = BankAccount("Sumanth", 500)
+account1.check_balance()
+account1.deposit(200)
+account1.withdraw(100)
+account1.withdraw(700)

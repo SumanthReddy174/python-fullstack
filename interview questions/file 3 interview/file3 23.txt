@@ -1,0 +1,26 @@
+23. Implement a class with a **static method** to check if a number is even.
+
+
+
+A static method is a method that:
+
+Belongs to the class, not to any specific object.
+
+Does not use self or cls.
+
+Is used when the method does not depend on object data.
+
+👉 We create it using the @staticmethod decorator.
+
+✅ Code Example
+class NumberCheck:
+    @staticmethod
+    def is_even(number):
+        if number % 2 == 0:
+            return True
+        else:
+            return False
+
+# Test
+print(NumberCheck.is_even(10))  # ✅ True
+print(NumberCheck.is_even(7))   # ❌ False

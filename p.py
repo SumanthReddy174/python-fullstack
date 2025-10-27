@@ -1,26 +1,51 @@
-#1
-def multiply(a,b):
-    return a * b
-result = multiply(3,4)
-print("result:", result)
-
-#2
-def greet(name):
-    print("hallo",name)
-greet("Alice")  
-
-#3
-def student(name,age,id):
-    print("Name:",name)
-    print("Age:",age)
-    print("Id:",id)
-
-student("bob",45,"h56")
-
-# 4
-def factorial (n):
-    if n==0:
+def factorial(n):
+    if n==1:
         return 1
     else:
-        return n*factorial(n-1)
-print("Factorial:", factorial (5))
+        return n * factorial(n-1)  
+print(factorial(5))        
+
+
+#2
+
+def sum_of_naturals(n):
+    if n==1:
+        return 1
+    else:
+        return n + sum_of_naturals(n-1)
+print(sum_of_naturals(5))
+
+#3 
+def print_numbers(n):
+    if n==0:
+        return
+    else:
+          
+        print_numbers(n-1)
+        print(n)
+        
+print_numbers(5)        
+
+#4
+def reverse_string(s):
+    if len(s)==0:
+        return s
+    else:
+        return s[-1]+ reverse_string(s[:-1])
+print(reverse_string("sumanth"))
+#5
+
+
+
+
+
+
+   
+
+
+
+    
+
+
+
+

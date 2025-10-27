@@ -1,0 +1,32 @@
+24. Create a class `Car` that tracks the number of cars created using a **class variable**.
+
+A class variable is shared by all objects of the class.
+It belongs to the class, not to any single object.
+
+
+class Car:
+    # Class variable (shared by all objects)
+    total_cars = 0
+
+    def __init__(self, brand):
+        # Instance variable (unique to each car)
+        self.brand = brand
+
+        # Increase count whenever a new car is made
+        Car.total_cars += 1
+
+    def show_info(self):
+        print(f"Car brand: {self.brand}")
+
+# Create car objects
+car1 = Car("Tesla")
+car2 = Car("BMW")
+car3 = Car("Audi")
+
+# Show details
+car1.show_info()
+car2.show_info()
+car3.show_info()
+
+# Print total cars created
+print("Total cars created:", Car.total_cars)

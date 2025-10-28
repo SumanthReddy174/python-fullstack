@@ -1,0 +1,17 @@
+*****remove all occurance
+
+
+numbers = [1, 2, 3, 2, 4, 2, 5]
+
+while 2 in numbers:
+    numbers.remove(2)
+
+print(numbers)
+
+example2
+
+numbers = [1, 2, 3, 2, 4, 2, 5]
+numbers = [x for x in numbers if x != 2]
+
+print(numbers)
+

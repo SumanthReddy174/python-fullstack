@@ -1,0 +1,27 @@
+25. Override the `__str__` method in a class to display custom output.
+
+
+
+
+What is __str__?
+
+__str__ is a dunder (magic) method in Python.
+
+It controls what gets printed when you use print(object).
+
+program::
+class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+
+    # Override __str__ method
+    def __str__(self):
+        return f"Student Name: {self.name}, Grade: {self.grade}"
+        
+
+# Create object
+s1 = Student("Sumanth", "A+")
+
+# Print object
+print(s1)

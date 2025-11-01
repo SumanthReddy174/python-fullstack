@@ -1,0 +1,20 @@
+27. Write a generator function that yields even numbers up to `n`.
+
+
+What is a Generator?
+
+A generator is like a machine that gives one value at a time — not all at once.
+It’s made using the yield keyword instead of return.
+
+
+program
+
+
+def even_numbers(n):
+    for i in range(2, n + 1, 2):  # start from 2, go till n, step by 2
+        yield i  # give one even number at a time
+
+
+# Using the generator
+for num in even_numbers(10):
+    print(num)

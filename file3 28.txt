@@ -1,0 +1,15 @@
+28. Implement a generator that yields Fibonacci numbers.
+
+
+
+
+def fibonacci(n):
+    a, b = 0, 1   # first two Fibonacci numbers
+    for _ in range(n):
+        yield a    # give the current number
+        a, b = b, a + b  # move to the next two numbers
+
+
+# Use the generator
+for num in fibonacci(10):
+    print(num)

@@ -1,0 +1,29 @@
+29. Write a generator that reads a large file line by line
+
+
+If you try to read a large file (like 1GB!) all at once, Python will try to store it in memory 💾 — and your program might crash 😬.
+
+A generator helps you read one line at a time, so it saves memory and works faster. ⚡
+
+✅ Example: Generator to Read a File
+def read_file_line_by_line(filename):
+    with open(filename, "r") as file:  # open the file safely
+        for line in file:              # loop through each line
+            yield line.strip()         # give one line at a time (remove \n)
+
+
+
+
+Step-by-Step Explanation
+
+def read_file_line_by_line(filename): → define a generator function.
+
+with open(filename, "r") as file: → opens the file safely (it will close automatically).
+
+for line in file: → loops through one line at a time.
+
+yield line.strip() → gives one clean line (removes \n) each time.
+
+The loop in the main program gets one line per iteration — without loading the whole file! 🧠
+
+

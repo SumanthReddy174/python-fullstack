@@ -34,8 +34,8 @@ def reverse_string(s):
         return s[-1]+ reverse_string(s[:-1])
 print(reverse_string("sumanth"))
 #5
-
-
+text="sumanth reddy"
+print(text.upper())
 
 
 

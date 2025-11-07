@@ -1,5 +1,5 @@
 def factorial(n):
-    if n==0:
+    if n==1:
        return 1
     else:
          return n*factorial(n-1)  
@@ -69,8 +69,38 @@ num = 12345678910
 reversed_num = reverse_number(num)
 print("Reversed number:", reversed_num)
 
-    
+#prime number 
+num = int(input("Enter a number: "))
+if num > 1:
+    for i in range(2, num):
+        if num % i == 0:
+            print(num, "is not a prime number")
+            break
+    else:
+        print(num, "is a prime number")
+else:
+    print(num, "is not a prime number")
    
+#Palindrome Program
+text = input("Enter a word or number: ")
+
+if text == text[::-1]:
+    print(text, "is a palindrome")
+else:
+    print(text, "is not a palindrome")   
+   
+
+# numbers from n to 1
+def print_reverse(n):
+    if n == 0:
+        return
+    print(n)
+    print_reverse(n - 1)
+
+print_reverse(5)
+
+
+
 
 
  

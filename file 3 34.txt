@@ -1,0 +1,65 @@
+34. Write code that handles multiple exceptions (e.g., `ZeroDivisionError`, `ValueError`).
+
+
+What Are Multiple Exceptions?
+
+When you run a program, different types of errors can happen.
+👉 Example:
+
+Dividing by zero → ZeroDivisionError
+
+Entering letters instead of numbers → ValueError
+
+Code Example
+try:
+    num1 = int(input("Enter the numerator: "))
+    num2 = int(input("Enter the denominator: "))
+    result = num1 / num2
+    print("Result:", result)
+
+except ZeroDivisionError:
+    print("❌ You can’t divide by zero!")
+
+except ValueError:
+    print("❌ Please enter only numbers, not letters!")
+
+except Exception as e:
+    print("⚠️ Something went wrong:", e)
+
+print("✅ Program continues smoothly...")
+
+🧾 Example Runs
+🧩 Case 1: Divide by Zero
+Enter the numerator: 10
+Enter the denominator: 0
+❌ You can’t divide by zero!
+✅ Program continues smoothly...
+
+🧩 Case 2: Invalid Input
+Enter the numerator: hello
+❌ Please enter only numbers, not letters!
+✅ Program continues smoothly...
+
+🧩 Case 3: Works Fine
+Enter the numerator: 8
+Enter the denominator: 2
+Result: 4.0
+✅ Program continues smoothly...
+
+🪄 Step-by-Step Explanation
+
+try:
+→ Code that might fail (like division or converting to int).
+
+except ZeroDivisionError:
+→ Runs if user divides by zero.
+
+except ValueError:
+→ Runs if user enters something that’s not a number.
+
+except Exception as e:
+→ Catches any other unexpected error.
+
+The program doesn’t crash — it keeps going! 🚀
+
+🧒 In Simple Words:

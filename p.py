@@ -27,15 +27,17 @@ def print_numbers(n):
 print_numbers(5)        
 
 #4
-def reverse_string(s):
-    if len(s)==0:
-        return s
-    else:
-        return s[-1]+ reverse_string(s[:-1])
-print(reverse_string("sumanth"))
-#5
-text="sumanth reddy"
-print(text.upper())
+students = {
+    101: {"name": "Ravi", "age": 20},
+    102: {"name": "Sumanth", "age": 21}
+}
+
+print(students[101]["name"])  # Ravi
+
+# Add nested
+students[103] = {"name": "Anjali", "age": 19}
+print(students)
+
 
 
 

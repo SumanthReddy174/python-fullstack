@@ -1,0 +1,56 @@
+35. Implement a safe file reader that handles `FileNotFoundError`.
+
+def safe_file_reader(filename):
+    try:
+        # Try to open and read the file
+        with open(filename, 'r') as file:
+            content = file.read()
+            print("📘 File content:\n", content)
+
+    except FileNotFoundError:
+        # Handles case where the file is missing
+        print(f"❌ Error: The file '{filename}' was not found.")
+
+    except Exception as e:
+        # Handles any other unexpected error
+        print("⚠️ Some other error occurred:", e)
+
+    else:
+        print("✅ File read successfully!")
+
+    finally:
+        print("🔚 File operation completed.")
+
+
+
+
+
+
+Step-by-Step Explanation
+
+try:
+
+We attempt to open the file using with open(filename, 'r').
+
+with automatically closes the file after reading (even if an error occurs).
+
+except FileNotFoundError:
+
+If the file doesn’t exist, this block executes and shows a user-friendly message.
+
+except Exception as e:
+
+Handles any other possible errors (like permission issues).
+
+else:
+
+Runs only if no exception occurs — means file opened successfully.
+
+finally:
+
+Runs always, whether there’s an error or not — good for cleanup or messages.
+
+
+
+
+

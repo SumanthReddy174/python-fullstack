@@ -1,0 +1,40 @@
+39. Create a context manager that opens a file and automatically closes it.
+
+What is a Context Manager?
+
+A context manager is a special object that sets up something and cleans up automatically afterward.
+
+For files, it opens the file and closes it automatically — even if an error occurs.
+
+We usually use the with statement for this.
+
+
+
+
+Creating a Custom Context Manager (Class Version)
+class FileManager:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = None
+
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)  # open the file
+        return self.file  # this will be assigned to the 'as' variable
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        if self.file:
+            self.file.close()  # close the file automatically
+        if exc_type:
+            print(f"⚠️ An error occurred: {exc_value}")
+        return True  # suppress exceptions (optional)
+
+🧩 Step-by-Step Explanation
+
+__init__ → store filename and mode (read/write).
+
+__enter__ → runs at the start of with → opens the file and returns it.
+
+__exit__ → runs at the end of with → closes the file automatically.
+
+exc_type, exc_value, traceback → optional info if an error occurs.

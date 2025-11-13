@@ -1,0 +1,30 @@
+40. Write a context manager that temporarily changes the working directory.
+
+What is a Working Directory?
+
+The working directory is the folder where your Python program is currently running.
+It’s like the “current location” for reading or writing files.
+
+
+
+import os
+
+class ChangeDirectory:
+    def __init__(self, new_path):
+        self.new_path = new_path
+        self.original_path = None  # to store the old path
+
+    def __enter__(self):
+        self.original_path = os.getcwd()  # save current directory
+        os.chdir(self.new_path)           # change to new one
+        print(f"📁 Changed to: {self.new_path}")
+        return self.new_path
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        os.chdir(self.original_path)      # go back to original directory
+        print(f"↩️ Returned to: {self.original_path}")
+
+
+
+
+

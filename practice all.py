@@ -368,7 +368,23 @@ try:
 except FileNotFoundError:
     print("error: file not found")
 #3
-    
+#try :
+ #   num = int(input("enter a number:"))
+  #  print("you entered:",num)
+#except ValueError:
+#    print("error : invalide input , give correct input")
+#4
+try:
+    a=10
+    b=20
+    result = a+b
+    print("result:",result)
+except Exception as e:
+    print("an error occured:",e)
+#5            
+
+
+
 
 
 

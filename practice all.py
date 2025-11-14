@@ -339,8 +339,42 @@ def laptop_specs(**specs):
     for key , value in specs.items():
         print(f"{key} : {value}")
 laptop_specs(brand="dell", model="xp", ram="16gb")
+#10
+def movie_details(**info):
+    for key , value in info.items():
+        print(f"{key} - {value}")
+movie_details(title= "inception", direction="nolan", year=2025)
+#11
+def city_data(**data):
+    for key , value in data.items():        
+       print(f"{key} -> {value}")
+city_data(name="paris", country="france", pop =100000)
+#12
+def phone_specs(**specs):
+    for key , value in specs.items():
+        print(f"{key} : {value}")
+phone_specs(brand="apple", model="iphone 17", storage="256gb")
+# error and expections
+#1
+#try:
+#    num = int(input("enter a number: "))
+#   result = num/0
+#    print("result;", result)
+#except ZeroDivisionError:
+#    print("error: division by zero is not allowed")
+#2 
+try:
+    file = open("non_extensive_file.txt", "r")
+except FileNotFoundError:
+    print("error: file not found")
+#3
+    
 
-       
+
+
+
+
+
 
 
 

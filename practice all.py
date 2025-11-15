@@ -380,8 +380,17 @@ try:
     result = a+b
     print("result:",result)
 except Exception as e:
-    print("an error occured:",e)
-#5            
+ print("an error occured:",e)
+#5
+try:
+    lst =[1,2,3,4,5]
+    print(lst[10])
+except IndexError:
+    print("error: index out of range")
+
+
+
+
 
 
 

@@ -387,6 +387,16 @@ try:
     print(lst[10])
 except IndexError:
     print("error: index out of range")
+#6
+try:
+    num = int(input("enter a number: "))
+    reciporcal = 1/num
+    print("reciporcal:,reciporcal")
+except ZeroDivisionError:
+    print("error: division by zero is not allowed")
+except ValueError:
+    print("error: invalid input , please enter a valid number")
+#7                
 
 
 

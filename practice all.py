@@ -396,7 +396,15 @@ except ZeroDivisionError:
     print("error: division by zero is not allowed")
 except ValueError:
     print("error: invalid input , please enter a valid number")
-#7                
+#7 
+try:
+    dictionary = {"a": 1, "b": 2, "c":3}
+    print(dictionary["d"])
+except KeyError:
+    print("error: key not found in dictionary")
+#8
+    
+
 
 
 

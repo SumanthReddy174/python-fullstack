@@ -417,7 +417,20 @@ try:
     print("result:,result")    
 except TypeError:
     print("error: unsupported operand type(s) for +")
+#10
+try:
+    file = open("example.txt","r")
+    content = file.read()
+    print(content)
+    file.close()
+except FileNotFoundError:
+    print("error: file not found")
+#11
+
     
+
+
+
 
 
 

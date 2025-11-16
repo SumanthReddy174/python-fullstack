@@ -411,7 +411,16 @@ except ZeroDivisionError:
     print("error: division ny zero is not allowed")
 except ValueError:
     print("error: invalid input , please enter valid input")
-        
+#9
+try:
+    result = 10 + "5"
+    print("result:,result")    
+except TypeError:
+    print("error: unsupported operand type(s) for +")
+    
+
+
+
 
 
          

@@ -403,7 +403,18 @@ try:
 except KeyError:
     print("error: key not found in dictionary")
 #8
-    
+try:
+    num = int(input("enter a number: "))
+    result = 100/num
+    print("result:",result)
+except ZeroDivisionError:
+    print("error: division ny zero is not allowed")
+except ValueError:
+    print("error: invalid input , please enter valid input")
+        
+
+
+         
 
 
 

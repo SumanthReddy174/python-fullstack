@@ -443,6 +443,14 @@ try:
     print("result:",result)
 except ZeroDivisionError:
     print("eroor: division by zero is not allowed")
+#14
+try:
+    dictionary={"x":10,"y":20} 
+    print(dictionary["z"])
+except KeyError:
+    print("error: key not found in dictionary") 
+          
+
     
 
 

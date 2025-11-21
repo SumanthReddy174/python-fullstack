@@ -449,6 +449,17 @@ try:
     print(dictionary["z"])
 except KeyError:
     print("error: key not found in dictionary") 
+#15
+try:
+    num = int(input("enter a number:"))
+    reciporcal = 1/num
+    print("reciporcal:",reciporcal)
+except ZeroDivisionError:
+    print("error: division by zero is not allowed")
+except ValueError:
+    print("error: invalid input, please enter a valid number")
+            
+
           
 
     

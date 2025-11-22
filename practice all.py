@@ -458,6 +458,14 @@ except ZeroDivisionError:
     print("error: division by zero is not allowed")
 except ValueError:
     print("error: invalid input, please enter a valid number")
+#16
+try:    
+    result ="hello world" + 5
+    print("result:",result)
+except TypeError:
+    print("error: unsupported operand type(s) for +") 
+       
+
             
 
           

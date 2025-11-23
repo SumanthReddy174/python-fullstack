@@ -467,12 +467,22 @@ except TypeError:
 
 #17
 try:
-    file = open("daata.txt","r")
+    file = open("data.txt","r")
     content = file.read()
     print(content)
     file.close()
 except FileNotFoundError:
     print("error: file not found")
+#18
+try:
+    num = int(input("enter a number:"))
+    print("you entered",num)      
+except ValueError:
+    print("error: invalid input,please enter a valid number")
+    
+
+
+
             
        
 

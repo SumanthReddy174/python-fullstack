@@ -464,6 +464,16 @@ try:
     print("result:",result)
 except TypeError:
     print("error: unsupported operand type(s) for +") 
+
+#17
+try:
+    file = open("daata.txt","r")
+    content = file.read()
+    print(content)
+    file.close()
+except FileNotFoundError:
+    print("error: file not found")
+            
        
 
             

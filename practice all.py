@@ -479,6 +479,13 @@ try:
     print("you entered",num)      
 except ValueError:
     print("error: invalid input,please enter a valid number")
+#19
+try:
+    lst =[1,2,3]
+    print(lst[10])
+except IndexError:
+    print("error: index out of range")
+               
     
 
 

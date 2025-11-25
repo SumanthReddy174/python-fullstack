@@ -491,7 +491,17 @@ try:
     print("result:",result)
 except ZeroDivisionError:
     print("error: division by zero is not allowed")
-    
+#21
+try:
+    dictionary=({"a":1,"b":2})
+    print(dictionary["c"])
+except KeyError:
+    print("error: key not found in dictionary")
+        
+
+
+
+
 
 
 

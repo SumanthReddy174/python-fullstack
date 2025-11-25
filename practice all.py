@@ -485,6 +485,18 @@ try:
     print(lst[10])
 except IndexError:
     print("error: index out of range")
+    #20
+try:
+    result =10/0
+    print("result:",result)
+except ZeroDivisionError:
+    print("error: division by zero is not allowed")
+    
+
+
+
+
+            
                
     
 

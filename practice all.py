@@ -506,7 +506,14 @@ except ZeroDivisionError:
     print("error: division by zero is not allowed")
 except ValueError:
     prrint("error: invalid input, please enter a valid number")
-            
+#23
+try:
+    result ="hello"+ 10            
+    print("result:",result)
+except TypeError:
+    print("error: unsupported operand type(s) for +")
+        
+
 
 
 

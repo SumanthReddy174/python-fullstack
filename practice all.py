@@ -526,6 +526,13 @@ try:
     print("you entered:",num)
 except ValueError:
     print("error: invalid input,please enter a valid number")
+#26
+try:
+    f = open("data.txt", "r")
+    print(f.read())
+except FileNotFoundError:
+    print("Error: File not found")
+    
 
     
 

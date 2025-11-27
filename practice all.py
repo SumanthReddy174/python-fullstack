@@ -512,7 +512,17 @@ try:
     print("result:",result)
 except TypeError:
     print("error: unsupported operand type(s) for +")
-        
+#24
+try:
+    file =open("info.txt","r")
+    content =file.read()
+    print(content)
+    file.close()
+except FileNotFoundError:
+    print("error: file not found")
+    
+    
+
 
 
 

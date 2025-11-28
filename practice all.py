@@ -537,6 +537,17 @@ try:
     result = "hello" + 5
 except TypeError:
     print("Error: Cannot add string and number")
+#28
+try:
+    a = int(input("Enter number: "))
+    print(10 / a)
+except ValueError:
+    print("Error: Please enter a valid number")
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero")
+
+    
+    
     
     
 

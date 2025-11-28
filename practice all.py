@@ -551,6 +551,13 @@ try:
     print(data["age"])
 except KeyError:
     print("Error: Key does not exist in dictionary")
+#30
+try:
+    nums = [10, 20, 30]
+    print(nums[10])
+except IndexError:
+    print("Error: List index out of range")
+    
 
 
     

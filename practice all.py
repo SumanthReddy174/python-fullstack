@@ -545,6 +545,15 @@ except ValueError:
     print("Error: Please enter a valid number")
 except ZeroDivisionError:
     print("Error: Cannot divide by zero")
+#29
+try:
+    data = {"name": "Sumanth"}
+    print(data["age"])
+except KeyError:
+    print("Error: Key does not exist in dictionary")
+
+
+    
 
     
     

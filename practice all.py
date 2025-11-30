@@ -557,6 +557,13 @@ try:
     print(nums[10])
 except IndexError:
     print("Error: List index out of range")
+#31
+try:
+    x = 10
+    x.append(5)
+except AttributeError:
+    print("Error: Integer has no method append()")
+    
     
 
 

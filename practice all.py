@@ -584,6 +584,12 @@ try:
     print(f.read())
 except FileNotFoundError:
     print("Error: File not found")
+#35
+try:
+    result = "hello" + 5
+except TypeError:
+    print("Error: Cannot add string and number")
+    
 
 
 

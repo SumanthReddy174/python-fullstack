@@ -570,6 +570,33 @@ try:
     print(a / b)
 except ZeroDivisionError:
     print("Error: Cannot divide by zero")
+#33
+try:
+    num = int(input("Enter a number: "))
+    print("You entered:", num)
+except ValueError:
+    print("Error: please enter only numbers")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

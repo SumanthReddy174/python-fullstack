@@ -578,6 +578,12 @@ except ValueError:
     print("Error: please enter only numbers")
 
 
+#34
+try:
+    f = open("data.txt", "r")
+    print(f.read())
+except FileNotFoundError:
+    print("Error: File not found")
 
 
 

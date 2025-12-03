@@ -590,7 +590,13 @@ try:
 except TypeError:
     print("Error: Cannot add string and number")
     
-
+#36
+try:
+    data = {"name": "Sumanth"}
+    print(data["age"])
+except KeyError:
+    print("Error: Key does not exist in dictionary")
+    
 
 
 

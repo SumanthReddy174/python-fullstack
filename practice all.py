@@ -596,6 +596,12 @@ try:
     print(data["age"])
 except KeyError:
     print("Error: Key does not exist in dictionary")
+#37
+try:
+    open("/root/test.txt", "w")
+except PermissionError:
+    print("Error: You don't have permission")
+    
     
 
 

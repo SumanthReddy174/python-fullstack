@@ -601,6 +601,12 @@ try:
     open("/root/test.txt", "w")
 except PermissionError:
     print("Error: You don't have permission")
+    #38
+try:
+    import mymodule   # module does not exist
+except ImportError:
+    print("Error: Module not found")
+
     
     
 

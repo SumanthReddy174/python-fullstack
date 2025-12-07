@@ -598,7 +598,7 @@ except KeyError:
     print("Error: Key does not exist in dictionary")
 #37
 try:
-    open("/root/test.txt", "w")
+    open("/root/test.txt","w")
 except PermissionError:
     print("Error: You don't have permission")
     #38
@@ -611,6 +611,14 @@ try:
     open("/root/test.txt", "w")
 except PermissionError:
     print("Error: You don't have permission")
+#39
+import os
+
+try:
+    os.mkdir("test")
+    os.mkdir("test")   # creating again
+except FileExistsError:
+    print("Error: Folder already exists")
 
     
     

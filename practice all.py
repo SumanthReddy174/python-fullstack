@@ -619,6 +619,18 @@ try:
     os.mkdir("test")   # creating again
 except FileExistsError:
     print("Error: Folder already exists")
+#40
+try:
+    import sys
+    sys.setrecursionlimit(5)
+
+    def f():
+        f()
+
+    f()
+except RuntimeError:
+    print("Error: Maximum recursion depth reached")
+
 
     
     

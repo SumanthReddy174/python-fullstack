@@ -631,6 +631,13 @@ try:
 except RuntimeError:
     print("Error: Maximum recursion depth reached")
 
+#41
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    print("Program stopped by user")
+
 
     
     

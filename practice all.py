@@ -642,6 +642,12 @@ try:
     big = "a" * (10**20)
 except MemoryError:
     print("Error: Not enough memory")
+#43
+try:
+    x = 5
+    assert x > 10
+except AssertionError:
+    print("Error: Assertion failed")
 
 
     

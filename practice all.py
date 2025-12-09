@@ -637,6 +637,11 @@ try:
         pass
 except KeyboardInterrupt:
     print("Program stopped by user")
+#42
+try:
+    big = "a" * (10**20)
+except MemoryError:
+    print("Error: Not enough memory")
 
 
     

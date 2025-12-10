@@ -648,6 +648,14 @@ try:
     assert x > 10
 except AssertionError:
     print("Error: Assertion failed")
+    #44
+try:
+    s = "hello"
+    b = s.encode("ascii")
+    print(b.decode("utf-16"))
+except UnicodeError:
+    print("Error: Unicode decoding failed")
+
 
 
     

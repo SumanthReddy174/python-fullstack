@@ -655,6 +655,11 @@ try:
     print(b.decode("utf-16"))
 except UnicodeError:
     print("Error: Unicode decoding failed")
+#45
+try:
+    n = float("abc")
+except ValueError:
+    print("Error: Cannot convert to float")
 
 
 

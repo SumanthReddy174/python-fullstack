@@ -660,6 +660,12 @@ try:
     n = float("abc")
 except ValueError:
     print("Error: Cannot convert to float")
+#46
+try:
+    n = float("abc")
+except ValueError:
+    print("Error: Cannot convert to float")
+
 
 
 

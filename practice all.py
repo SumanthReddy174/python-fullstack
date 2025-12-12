@@ -671,6 +671,11 @@ try:
     print(s[20])
 except IndexError:
     print("Error: String index out of range")
+#48
+try:
+    a = 10 % 0
+except ZeroDivisionError:
+    print("Error: Modulo by zero not allowed")
 
 
 

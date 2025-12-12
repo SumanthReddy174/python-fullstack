@@ -676,6 +676,11 @@ try:
     a = 10 % 0
 except ZeroDivisionError:
     print("Error: Modulo by zero not allowed")
+#49
+try:
+    print(len(123))
+except TypeError:
+    print("Error: length not possible for numbers")
 
 
 

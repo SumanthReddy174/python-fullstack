@@ -687,6 +687,15 @@ try:
     print(d["b"])
 except KeyError:
     print("Error: Key not found in dictionary")
+#42
+try:
+    async def test():
+        raise StopAsyncIteration
+
+    import asyncio
+    asyncio.run(test())
+except StopAsyncIteration:
+    print("Error: Async iterator stopped")
 
 
 

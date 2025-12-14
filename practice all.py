@@ -549,10 +549,10 @@ except ZeroDivisionError:
 try:
     data = {"name": "Sumanth"}
     print(data["age"])
-except KeyError:
-    print("Error: Key does not exist in dictionary")
+
+  
 #30
-try:
+
     nums = [10, 20, 30]
     print(nums[10])
 except IndexError:
@@ -681,13 +681,13 @@ try:
     print(len(123))
 except TypeError:
     print("Error: length not possible for numbers")
-#41
+#50
 try:
     d = {"a": 1}
     print(d["b"])
 except KeyError:
     print("Error: Key not found in dictionary")
-#42
+#52
 try:
     async def test():
         raise StopAsyncIteration
@@ -696,6 +696,12 @@ try:
     asyncio.run(test())
 except StopAsyncIteration:
     print("Error: Async iterator stopped")
+#53
+try:
+    open("C:/abc/xyz.txt", "r")
+except FileNotFoundError:
+    print("Error: File not found at given path")
+     
 
 
 

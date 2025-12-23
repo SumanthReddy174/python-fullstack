@@ -1,0 +1,17 @@
+30. Create a generator that yields prime numbers up to `n`.
+
+A prime number is a number greater than 1 that has no divisors other than 1 and itself.
+Examples:
+👉 2, 3, 5, 7, 11, 13, 17, …
+
+
+
+program
+
+def prime_numbers(n):
+    for num in range(2, n + 1):  # check numbers from 2 to n
+        for i in range(2, int(num ** 0.5) + 1):  # check divisors up to sqrt(num)
+            if num % i == 0:  # if divisible, not prime
+                break
+        else:
+            yield num  # if no break, it's a prime → yield it

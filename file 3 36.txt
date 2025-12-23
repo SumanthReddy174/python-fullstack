@@ -1,0 +1,49 @@
+ Decorators & Context Managers
+
+
+
+36. Write a decorator that logs the execution time of a function.
+
+
+What is a Decorator?
+
+A decorator is a special function that adds extra behavior to another function without changing its code.
+
+Program: Execution Time Logger
+import time  # ⏰ Used to measure execution time
+
+def log_execution_time(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()  # Record start time
+        result = func(*args, **kwargs)  # Run the original function
+        end_time = time.time()    # Record end time
+        print(f"⏱ Function '{func.__name__}' took {end_time - start_time:.4f} seconds to execute.")
+        return result  # Return the function’s output
+    return wrapper
+
+🧩 Step-by-Step Explanation
+
+import time → to measure how long the function takes to run.
+
+log_execution_time(func) → main decorator function that takes another function as input.
+
+wrapper() → an inner function that:
+
+Records the start time.
+
+Runs the original function (func()).
+
+Records the end time.
+
+Prints the total execution time.
+
+return wrapper → sends the modified version of the function back.
+
+🎯 Example Usage
+@log_execution_time
+def slow_function():
+    for i in range(5):
+        time.sleep(1)  # Simulate a slow operation
+    print("Finished slow task!")
+
+slow_function()

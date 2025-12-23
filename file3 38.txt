@@ -1,0 +1,1 @@
+38. Write a decorator that only allows function execution if the user is "admin".

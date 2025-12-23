@@ -1,0 +1,47 @@
+32. Create a custom exception `NegativeNumberError` and raise it when a negative number is passed.
+
+
+
+✅ Step 1: Create the Custom Exception
+
+We create a new class that inherits from Exception.
+
+class NegativeNumberError(Exception):
+    """Custom Exception raised when a number is negative"""
+    pass
+
+
+Here:
+
+Exception → is the parent class for all errors.
+
+pass → means no extra behavior, just use the name.
+
+✅ Step 2: Use It in Code
+def check_positive(num):
+    if num < 0:
+        raise NegativeNumberError("Negative numbers are not allowed!")
+    else:
+        print("The number is positive:", num)
+Step 3: Handle the Exception Using try-except
+try:
+    number = int(input("Enter a number: "))
+    check_positive(number)
+
+except NegativeNumberError as e:
+    print("Error:", e)
+
+
+
+
+Step-by-Step Explanation:
+
+class NegativeNumberError(Exception):
+→ Creates a new type of error called NegativeNumberError.
+
+raise NegativeNumberError("...")
+→ Manually throws (raises) the error when a number is negative.
+
+try-except
+→ Catches the custom error so your program doesn’t crash.
+

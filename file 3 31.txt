@@ -1,0 +1,18 @@
+ Exception Handling
+
+
+31. Write code to handle division by zero with try-except.
+
+
+try:
+    result = 10 / 0
+except Exception as e:
+    print("An error occurred:", e)
+ 
+
+
+try = “Try to run this.”
+
+🚨 except = “If it fails, do this instead.”
+
+✅ Helps your program not crash even if something goes wrong.

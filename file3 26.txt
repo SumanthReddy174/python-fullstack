@@ -1,0 +1,42 @@
+ Iterators & Generators****
+
+
+26. Create a custom iterator class that generates square numbers up to `n`.
+
+
+What is an Iterator?
+
+An iterator is something you can loop through (like for i in ...).
+
+In Python, any object that has:
+
+a __iter__() method
+
+and a __next__() method
+is called an iterator.
+
+
+program:
+
+class SquareNumbers:
+    def __init__(self, n):
+        self.n = n      # store the limit
+        self.current = 1  # start from 1
+
+    def __iter__(self):
+        return self  # returns the iterator object itself
+
+    def __next__(self):
+        if self.current <= self.n:
+            square = self.current ** 2  # calculate square
+            self.current += 1           # move to next number
+            return square
+        else:
+            raise StopIteration  # stop the loop when done
+
+
+# Using the iterator
+sq = SquareNumbers(5)
+
+for num in sq:
+    print(num)

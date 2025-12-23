@@ -1,0 +1,4 @@
+this file is created using python
+file handling is easy
+appending  new line to the file
+adding new content to the file

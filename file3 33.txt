@@ -1,0 +1,19 @@
+33. Implement a function that retries division 3 times if an error occurs.
+def safe_division():
+    attempts = 3  # total tries
+
+    for i in range(attempts):
+        try:
+            num1 = int(input("Enter the numerator: "))
+            num2 = int(input("Enter the denominator: "))
+            result = num1 / num2
+            print("Result:", result)
+            break  # stop the loop if division works fine
+
+        except ZeroDivisionError:
+            print("❌ You can’t divide by zero! Try again.")
+            print(f"Attempts left: {attempts - i - 1}")
+
+    else:
+        # this runs only if the loop didn't break (i.e., 3 failed tries)
+        print("❌ Too many failed attempts. Please try later.")

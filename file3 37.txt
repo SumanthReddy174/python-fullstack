@@ -1,0 +1,52 @@
+37. Implement a decorator that counts how many times a function is called.
+
+What is this decorator for?
+
+It helps us know how many times a function has been executed.
+Each time we call the function, the counter increases.
+
+✅ Program: Function Call Counter
+def count_calls(func):
+    count = 0  # Initialize counter
+
+    def wrapper(*args, **kwargs):
+        nonlocal count  # allows us to modify 'count' from outer function
+        count += 1
+        print(f"Function '{func.__name__}' called {count} times")
+        return func(*args, **kwargs)  # Call the original function
+    return wrapper
+
+🧩 Step-by-Step Explanation
+
+count_calls(func) → decorator function that takes another function as input.
+
+count = 0 → keeps track of how many times the function is called.
+
+wrapper() → inner function that:
+
+Increases the count each time it runs.
+
+Prints how many times the function has been called.
+
+Runs the original function.
+
+nonlocal count → allows the inner function to modify count from the outer scope.
+
+return wrapper → sends back the modified function.
+
+🎯 Example Usage
+@count_calls
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")
+greet("Bob")
+greet("Charlie")
+
+🧾 Output
+Function 'greet' called 1 times
+Hello, Alice!
+Function 'greet' called 2 times
+Hello, Bob!
+Function 'greet' called 3 times
+Hello, Charlie!

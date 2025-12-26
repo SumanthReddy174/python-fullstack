@@ -806,6 +806,14 @@ try:
     open("/root/test.txt", "w")
 except PermissionError:
     print("Error: You don't have permission")
+#71
+try:
+    s = "python"
+    print(s[20])
+except IndexError:
+    print("Error: String index out of range")
+    
+
 
 
 

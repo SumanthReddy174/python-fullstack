@@ -812,6 +812,12 @@ try:
     print(s[20])
 except IndexError:
     print("Error: String index out of range")
+#72
+try:
+    input()
+except EOFError:
+    print("Error: End of file reached")
+    
     
 
 

@@ -817,6 +817,13 @@ try:
     input()
 except EOFError:
     print("Error: End of file reached")
+
+#73
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    print("Error: Program stopped by user")
     
     
 

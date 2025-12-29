@@ -824,6 +824,16 @@ try:
         pass
 except KeyboardInterrupt:
     print("Error: Program stopped by user")
+#74
+try:
+    open(".", "r")
+except IsADirectoryError:
+    print("Error: Cannot open directory as file")
+
+
+    
+
+
     
     
 

@@ -829,6 +829,12 @@ try:
     open(".", "r")
 except IsADirectoryError:
     print("Error: Cannot open directory as file")
+#75
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    print("Error: Program stopped by user")
 
 
     

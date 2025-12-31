@@ -835,6 +835,11 @@ try:
         pass
 except KeyboardInterrupt:
     print("Error: Program stopped by user")
+#76
+try:
+    from math import square
+except ImportError:
+    print("Error: Function not found in module")
 
 
     

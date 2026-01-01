@@ -840,6 +840,16 @@ try:
     from math import square
 except ImportError:
     print("Error: Function not found in module")
+#77
+try:
+    def f():
+        return f()
+    f()
+except RecursionError:
+    print("Error: Too much recursion")
+
+
+
 
 
     

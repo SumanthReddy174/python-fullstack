@@ -847,6 +847,13 @@ try:
     f()
 except RecursionError:
     print("Error: Too much recursion")
+#78
+try:
+    print(value)   # value not defined
+except NameError:
+    print("Error: Variable not defined")
+    
+
 
 
 

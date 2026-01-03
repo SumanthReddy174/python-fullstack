@@ -852,6 +852,11 @@ try:
     print(value)   # value not defined
 except NameError:
     print("Error: Variable not defined")
+#79
+try:
+    n = float("abc")
+except ValueError:
+    print("Error: Cannot convert to float")
     
 
 

@@ -857,7 +857,14 @@ try:
     n = float("abc")
 except ValueError:
     print("Error: Cannot convert to float")
-    
+
+#80
+try:
+    big = "a" * (10**20)
+except MemoryError:
+    print("Error: Not enough memory")
+
+
 
 
 

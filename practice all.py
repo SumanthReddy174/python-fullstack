@@ -863,6 +863,11 @@ try:
     big = "a" * (10**20)
 except MemoryError:
     print("Error: Not enough memory")
+#81
+try:
+    open("file.txt/abc", "r")
+except NotADirectoryError:
+    print("Error: Not a directory")
 
 
 

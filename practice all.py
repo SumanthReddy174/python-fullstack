@@ -868,6 +868,11 @@ try:
     open("file.txt/abc", "r")
 except NotADirectoryError:
     print("Error: Not a directory")
+#82
+try:
+    open(".", "r")
+except IsADirectoryError:
+    print("Error: Cannot open directory as file")
 
 
 

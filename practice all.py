@@ -884,6 +884,12 @@ try:
     n = float("abc")
 except ValueError:
     print("Error: Cannot convert to float")
+#85
+try:
+    s = "python"
+    print(s[20])
+except IndexError:
+    print("Error: String index out of range")
     
 
 

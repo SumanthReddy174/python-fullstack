@@ -890,6 +890,11 @@ try:
     print(s[20])
 except IndexError:
     print("Error: String index out of range")
+#87
+try:
+    print(len(123))
+except TypeError:
+    print("Error: length not possible for numbers")
     
 
 

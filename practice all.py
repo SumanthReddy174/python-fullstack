@@ -878,8 +878,13 @@ try:
     while True:
         pass
 except KeyboardInterrupt:
-    print("Error: Program stopped by user")
-
+    print("Error: Program stopped ")
+#84
+try:
+    n = float("abc")
+except ValueError:
+    print("Error: Cannot convert to float")
+    
 
 
 

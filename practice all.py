@@ -895,7 +895,13 @@ try:
     print(len(123))
 except TypeError:
     print("Error: length not possible for numbers")
-    
+ #88
+ try:
+    d = {"a": 1}
+    print(d["b"])
+except KeyError:
+    print("Error: Key not found in dictionary")
+
 
 
 

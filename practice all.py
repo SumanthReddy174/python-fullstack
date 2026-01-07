@@ -910,6 +910,11 @@ try:
     asyncio.run(test())
 except StopAsyncIteration:
     print("Error: Async iterator stopped")
+#90
+try:
+    open("C:/abc/xyz.txt", "r")
+except FileNotFoundError:
+    print("Error: File not found at given path")
     
     
 

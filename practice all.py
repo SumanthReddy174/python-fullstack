@@ -915,7 +915,12 @@ try:
     open("C:/abc/xyz.txt", "r")
 except FileNotFoundError:
     print("Error: File not found at given path")
-    
+ #91
+try:
+    import abcxyz
+except ModuleNotFoundError:
+    print("Error: This module does not exist")
+  
     
 
 

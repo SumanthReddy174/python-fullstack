@@ -942,6 +942,12 @@ try:
     next(g)
 except RuntimeError:
     print("Error: Generator re-entered")
+#94
+try:
+    big = [1] * (10**10)
+except MemoryError:
+    print("Error: Not enough memory to create list")
+    
 
     
 

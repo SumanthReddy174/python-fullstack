@@ -947,7 +947,14 @@ try:
     big = [1] * (10**10)
 except MemoryError:
     print("Error: Not enough memory to create list")
-    
+#95
+try:
+    def f():
+        return f()
+    f()
+except RecursionError:
+    print("Error: Too much recursion")
+
 
     
 

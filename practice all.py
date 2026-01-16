@@ -954,6 +954,12 @@ try:
     f()
 except RecursionError:
     print("Error: Too much recursion")
+#96
+ try:
+    open("///invalid///path.txt", "w")
+except OSError:
+    print("Error: Invalid file path")
+   
 
 
     

@@ -959,6 +959,15 @@ except RecursionError:
     open("///invalid///path.txt", "w")
 except OSError:
     print("Error: Invalid file path")
+#97
+try:
+    import os
+    os.write(9999, b"hello")
+except BrokenPipeError:
+    print("Error: Broken pipe")
+except OSError:
+    print("Some OS error occurred")
+
    
 
 

@@ -955,7 +955,7 @@ try:
 except RecursionError:
     print("Error: Too much recursion")
 #96
- try:
+try:
     open("///invalid///path.txt", "w")
 except OSError:
     print("Error: Invalid file path")
@@ -967,6 +967,12 @@ except BrokenPipeError:
     print("Error: Broken pipe")
 except OSError:
     print("Some OS error occurred")
+#98
+try:
+    raise TimeoutError
+except TimeoutError:
+    print("Error: Operation timed out")
+    
 
    
 

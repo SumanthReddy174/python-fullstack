@@ -972,7 +972,12 @@ try:
     raise TimeoutError
 except TimeoutError:
     print("Error: Operation timed out")
-    
+ #99
+try:
+    x = 1 / 0
+except ArithmeticError:
+    print("Error: Arithmetic problem occurred")
+
 
    
 

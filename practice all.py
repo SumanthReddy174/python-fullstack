@@ -983,7 +983,13 @@ try:
     print(lst[10])
 except LookupError:
     print("Error: Lookup failed (index or key problem)")
-    
+#101
+try:
+    code = "   x=5\nprint(x)"
+    exec(code)
+except IndentationError:
+    print("Error: Wrong indentation in code")
+
 
 
    

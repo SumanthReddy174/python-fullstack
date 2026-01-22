@@ -989,6 +989,13 @@ try:
     exec(code)
 except IndentationError:
     print("Error: Wrong indentation in code")
+#102
+try:
+    exec("a === 5")
+except SyntaxError:
+    print("Error: Wrong syntax in code")
+
+
 
 
 

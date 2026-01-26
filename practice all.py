@@ -994,6 +994,11 @@ try:
     exec("a === 5")
 except SyntaxError:
     print("Error: Wrong syntax in code")
+#103
+try:
+    x = 10 + [1, 2]
+except TypeError:
+    print("Error: Cannot add number and list")
 
 
 

@@ -1005,6 +1005,11 @@ try:
     n = int("10.5")
 except ValueError:
     print("Error: Cannot convert float string to int")
+#105
+try:
+    a = 10 // 0
+except ZeroDivisionError:
+    print("Error: Floor division by zero")
 
 
 

@@ -1010,6 +1010,7 @@ try:
     a = 10 // 0
 except ZeroDivisionError:
     print("Error: Floor division by zero")
+#106
 
 
 

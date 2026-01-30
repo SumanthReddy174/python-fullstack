@@ -1011,7 +1011,11 @@ try:
 except ZeroDivisionError:
     print("Error: Floor division by zero")
 #106
-
+try:
+    d = {"a": {"b": 10}}
+    print(d["a"]["c"])
+except KeyError:
+    print("Error: Nested key not found")
 
 
 

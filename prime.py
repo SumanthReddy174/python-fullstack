@@ -19,5 +19,12 @@ def is_prime(n):
     return True
 
 num = int(input("Enter number: "))
-print("Prime" if is_prime(num) else "Not Prime")   
+print("Prime" if is_prime(num) else "Not Prime")  
+#3
+for num in range(2, 51):
+    for i in range(2, num):
+        if num % i == 0:
+            break
+    else:
+        print(num) 
 

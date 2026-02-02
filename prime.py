@@ -37,5 +37,20 @@ def is_prime(n):
     return True
 
 num = int(input("Enter number: "))
-print("Prime" if is_prime(num) else "Not Prime")        
+print("Prime" if is_prime(num) else "Not Prime")       
 
+
+#5
+num = int(input("Enter number: "))
+
+if num <= 1:
+    print("Not Prime")
+else:
+    i = 2
+    while i < num:
+        if num % i == 0:
+            print("Not Prime")
+            break
+        i += 1
+    else:
+        print("Prime")

@@ -83,3 +83,14 @@ if count == 2:
     print("Prime")
 else:
     print("Not Prime")
+#9
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for num in nums:
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                break
+        else:
+            print(num, "Prime")
+    

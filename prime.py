@@ -118,4 +118,13 @@ try:
             print("Not Prime")
 except:
     print("Enter valid number")
+#12
+num = int(input("Enter number: "))
+
+if num == 2 or num == 3:
+    print("Prime")
+elif num % 2 == 0 or num <= 1:
+    print("Not Prime")
+else:
+    print("Prime")
 

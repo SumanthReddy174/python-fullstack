@@ -127,4 +127,20 @@ elif num % 2 == 0 or num <= 1:
     print("Not Prime")
 else:
     print("Prime")
+#13
+num = int(input("Enter number: "))
+flag = True
+
+if num <= 1:
+    flag = False
+else:
+    for i in range(2, num):
+        if num % i == 0:
+            flag = False
+            break
+
+if flag:
+    print("Prime")
+else:
+    print("Not Prime")
 

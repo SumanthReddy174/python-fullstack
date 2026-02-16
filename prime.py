@@ -168,3 +168,17 @@ else:
         print("Prime")
     else:
         print("Not Prime")
+#16
+num = int(input("Enter number: "))
+
+if num % 2 == 0 and num != 2:
+    print("Even and Not Prime")
+elif num == 2:
+    print("Even Prime")
+else:
+    for i in range(2, num):
+        if num % i == 0:
+            print("Odd and Not Prime")
+            break
+    else:
+        print("Odd Prime")

@@ -204,3 +204,14 @@ for num in nums:
                 break
         else:
             print(num, "Prime")
+#19
+def prime(n):
+    if n <= 1:
+        return "Not Prime"
+    for i in range(2, n):
+        if n % i == 0:
+            return "Not Prime"
+    return "Prime"
+
+num = int(input("Enter number: "))
+print(prime(num))

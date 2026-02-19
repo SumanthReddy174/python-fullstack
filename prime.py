@@ -240,3 +240,15 @@ try:
             print("Not Prime")
 except:
     print("Enter valid number")
+#22
+def check_prime(n, i=2):
+    if n <= 1:
+        return False
+    if i == n:
+        return True
+    if n % i == 0:
+        return False
+    return check_prime(n, i+1)
+
+num = int(input("Enter number: "))
+print("Prime" if check_prime(num) else "Not Prime")

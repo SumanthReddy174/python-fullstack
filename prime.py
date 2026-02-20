@@ -252,3 +252,14 @@ def check_prime(n, i=2):
 
 num = int(input("Enter number: "))
 print("Prime" if check_prime(num) else "Not Prime")
+#23
+primes = []
+
+for num in range(2, 30):
+    for i in range(2, num):
+        if num % i == 0:
+            break
+    else:
+        primes.append(num)
+
+print(primes)

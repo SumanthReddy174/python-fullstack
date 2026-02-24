@@ -274,4 +274,18 @@ def check_prime(n, i=2):
     return check_prime(n, i+1)
 
 num = int(input("Enter number: "))
-print("Prime" if check_prime(num) else "Not Prime")
+
+#25
+num = int(input("Enter number: "))
+
+if num % 2 == 0 and num != 2:
+    print("Even and Not Prime")
+elif num == 2:
+    print("Even Prime")
+else:
+    for i in range(2, num):
+        if num % i == 0:
+            print("Odd and Not Prime")
+            break
+    else:
+        print("Odd Prime")
